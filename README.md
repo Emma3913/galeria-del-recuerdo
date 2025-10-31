@@ -7,7 +7,7 @@
 ---
 
 ## 🕯️ Vista Previa
-![Galería del Recuerdo](public/assets/preview.png)
+![Galería del Recuerdo](src/assets/img/preview.png)
 
 ---
 
