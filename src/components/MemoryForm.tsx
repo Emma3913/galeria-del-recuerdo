@@ -113,7 +113,7 @@ const MemoryForm: React.FC<MemoryFormProps> = ({ onSave, onClose }) => {
                                 setName(e.target.value);
                                 if (errors.name) setErrors({ ...errors, name: '' });
                             }}
-                            className={`w-full px-4 py-2 rounded bg-purple-800 text-white border focus:outline-none focus:border-yellow-300 ${errors.name ? 'border-red-500' : 'border-yellow-500'
+                            className={`w-full px-4 py-2 rounded bg-purple-800 text-white border focus:outline-none focus:border-yellow-300 font-pixel text-sm ${errors.name ? 'border-red-500' : 'border-yellow-500'
                                 }`}
                             placeholder="Ej: María López"
                             maxLength={100}
@@ -139,7 +139,7 @@ const MemoryForm: React.FC<MemoryFormProps> = ({ onSave, onClose }) => {
                                 if (errors.message) setErrors({ ...errors, message: '' });
                             }}
                             rows={4}
-                            className={`w-full px-4 py-2 rounded bg-purple-800 text-white border focus:outline-none focus:border-yellow-300 resize-none ${errors.message ? 'border-red-500' : 'border-yellow-500'
+                            className={`w-full px-4 py-2 rounded bg-purple-800 text-white border focus:outline-none focus:border-yellow-300 resize-none font-pixel text-sm ${errors.message ? 'border-red-500' : 'border-yellow-500'
                                 }`}
                             placeholder="Comparte un recuerdo, agradecimiento o mensaje..."
                             maxLength={1000}
@@ -171,7 +171,7 @@ const MemoryForm: React.FC<MemoryFormProps> = ({ onSave, onClose }) => {
                                 setPhotoUrl(e.target.value);
                                 if (errors.photoUrl) setErrors({ ...errors, photoUrl: '' });
                             }}
-                            className={`w-full px-4 py-2 rounded bg-purple-800 text-white border focus:outline-none focus:border-yellow-300 ${errors.photoUrl ? 'border-red-500' : 'border-yellow-500'
+                            className={`w-full px-4 py-2 rounded bg-purple-800 text-white border focus:outline-none focus:border-yellow-300 font-pixel text-sm ${errors.photoUrl ? 'border-red-500' : 'border-yellow-500'
                                 }`}
                             placeholder="https://ejemplo.com/foto.jpg"
                         />
