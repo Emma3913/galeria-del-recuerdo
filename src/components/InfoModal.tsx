@@ -1,7 +1,11 @@
 // components/InfoModal.tsx
 import React from 'react';
-import { X } from 'lucide-react';
+import { Info, Moon, Sun, Volume2, X } from 'lucide-react';
 import type { InfoModalProps } from '../types';
+import Candle from './../assets/img/vela.png'
+import PaperCut from './../assets/img/paper-cut.png'
+import Flower from './../assets/img/flor-hd.png'
+import Camera from './../assets/img/camer.png'
 
 /**
  * Modal informativo que explica la tradición del Día de Muertos,
@@ -50,7 +54,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ onClose }) => {
                         </h3>
                         <div className="space-y-3">
                             <div className="flex gap-3">
-                                <span className="text-2xl flex-shrink-0">🕯️</span>
+                                <span className="text-2xl flex-shrink-0"><img className='w-10' src={Candle} alt="candle" /></span>
                                 <div>
                                     <strong className="text-yellow-400 font-pixel">Velas:</strong>
                                     <p className="font-pixel text-xs">Iluminan el camino de las almas hacia el altar. Su luz representa la fe y la esperanza.</p>
@@ -58,7 +62,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ onClose }) => {
                             </div>
 
                             <div className="flex gap-3">
-                                <span className="text-2xl flex-shrink-0">🌼</span>
+                                <span className="text-2xl flex-shrink-0"><img className='w-10' src={Flower} alt="flower" /></span>
                                 <div>
                                     <strong className="text-yellow-400 font-pixel">Flores de Cempasúchil:</strong>
                                     <p className="font-pixel text-xs">Su aroma intenso y color naranja brillante guían a los difuntos de regreso a casa.</p>
@@ -66,7 +70,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ onClose }) => {
                             </div>
 
                             <div className="flex gap-3">
-                                <span className="text-2xl flex-shrink-0">🎨</span>
+                                <span className="text-2xl flex-shrink-0"><img className='w-10' src={PaperCut} alt="papercut" /></span>
                                 <div>
                                     <strong className="text-yellow-400 font-pixel">Papel Picado:</strong>
                                     <p className="font-pixel text-xs">Representa la fragilidad de la vida y añade color y alegría a la celebración.</p>
@@ -74,7 +78,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ onClose }) => {
                             </div>
 
                             <div className="flex gap-3">
-                                <span className="text-2xl flex-shrink-0">📸</span>
+                                <span className="text-2xl flex-shrink-0"><img className='w-10' src={Camera} alt="camera" /></span>
                                 <div>
                                     <strong className="text-yellow-400 font-pixel">Fotografías:</strong>
                                     <p className="font-pixel text-xs">Para recordar físicamente a nuestros seres queridos y mantener su memoria viva.</p>
@@ -84,34 +88,38 @@ const InfoModal: React.FC<InfoModalProps> = ({ onClose }) => {
                     </section>
 
                     {/* Sección: Cómo usar la app */}
-                    <section>
-                        <h3 className="text-2xl font-bold text-yellow-300 mb-3 font-pixel">
+                    <section className="p-4 rounded-lg bg-black/30 backdrop-blur-sm border border-yellow-400/20">
+                        <h3 className="text-2xl font-bold text-yellow-300 mb-4 font-pixel text-center">
                             Cómo usar la app
                         </h3>
-                        <ol className="space-y-2 list-decimal list-inside leading-relaxed font-pixel text-xs">
+
+                        <ol className="space-y-3 list-decimal list-inside leading-relaxed font-pixel text-sm text-yellow-100">
                             <li>
-                                Haz clic en <strong>"Agregar un Recuerdo"</strong> para honrar a un ser querido
+                                Haz clic en <strong className="text-yellow-300">"Agregar un Recuerdo"</strong> para honrar a un ser querido.
                             </li>
                             <li>
-                                Llena el nombre y escribe un mensaje especial (ambos obligatorios)
+                                Llena el nombre y escribe un mensaje especial (ambos son obligatorios).
                             </li>
                             <li>
-                                Opcionalmente, agrega una foto (URL) o un audio (mensaje de voz o música)
+                                Opcionalmente, agrega una foto (URL) o un audio (mensaje de voz o música).
                             </li>
                             <li>
-                                Haz clic en cualquier tarjeta de la galería para ver los detalles completos
+                                Haz clic en cualquier tarjeta de la galería para ver los detalles completos.
                             </li>
-                            <li>
-                                Usa el botón <strong>🌙</strong> para activar el modo "Luz de Velas" - perfecto para momentos de reflexión
+                            <li className="flex items-center gap-1 flex-wrap">
+                                Usa el botón <Sun className="w-5 h-5 inline-block text-yellow-300" /> o{" "}
+                                <Moon className="w-5 h-5 inline-block text-yellow-300" /> para activar el
+                                modo <span className="italic">"Luz de Velas"</span> — perfecto para momentos de reflexión.
                             </li>
-                            <li>
-                                Usa el botón <strong>🔊</strong> para reproducir música ambiental relajante
+                            <li className="flex items-center gap-1 flex-wrap">
+                                Usa el botón <Volume2 className="w-5 h-5 inline-block text-yellow-300" /> para reproducir música ambiental relajante.
                             </li>
-                            <li>
-                                Usa el botón <strong>ℹ️</strong> para ver esta información nuevamente
+                            <li className="flex items-center gap-1 flex-wrap">
+                                Usa el botón <Info className="w-5 h-5 inline-block text-yellow-300" /> para ver esta información nuevamente.
                             </li>
                         </ol>
                     </section>
+
 
                     {/* Sección: Historia Personal */}
                     {/* <section>
