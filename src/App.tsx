@@ -1,10 +1,8 @@
-function App() {
+import MemoryGallery from "./pages/MemoryGallery"
 
-  const hello = "HOls";
+function App() {
   return (
-    <div>
-      <h1>{hello}</h1>
-    </div>
+    <MemoryGallery />
   )
 }
 

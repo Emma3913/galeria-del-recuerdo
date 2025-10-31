@@ -1,0 +1,402 @@
+/* styles/global.css */
+/* Estilos globales y animaciones para Galería del Recuerdo */
+
+/* ===========================================
+   ANIMACIONES PRINCIPALES
+   =========================================== */
+
+/* Animación de flotación para las flores */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+    opacity: 0.6;
+  }
+}
+
+/* Animación de entrada suave (fade in) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación de entrada desde abajo */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación de parpadeo para las velas */
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  25% {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(0.95);
+  }
+  75% {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+/* Animación de resplandor para modo velas */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 165, 0, 0.8);
+  }
+}
+
+/* Animación de pulso suave */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Animación de rotación continua */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animación de rebote suave */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ===========================================
+   CLASES DE UTILIDAD PARA ANIMACIONES
+   =========================================== */
+
+.animate-float {
+  animation: float infinite ease-in-out;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.6s ease-out;
+}
+
+.animate-flicker {
+  animation: flicker 2s infinite;
+}
+
+.animate-glow {
+  animation: glow 2s infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+.animate-rotate {
+  animation: rotate 2s linear infinite;
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+/* ===========================================
+   ESTILOS GLOBALES
+   =========================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===========================================
+   UTILIDADES DE TRANSICIÓN
+   =========================================== */
+
+.transition-all {
+  transition: all 0.3s ease-in-out;
+}
+
+.transition-colors {
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.transition-opacity {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.transition-transform {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* ===========================================
+   ESTILOS PARA SCROLLBAR PERSONALIZADO
+   =========================================== */
+
+/* Para navegadores Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(251, 146, 60, 0.5);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 146, 60, 0.8);
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(251, 146, 60, 0.5) rgba(0, 0, 0, 0.1);
+}
+
+/* ===========================================
+   UTILIDADES DE TEXTO
+   =========================================== */
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ===========================================
+   EFECTOS HOVER PERSONALIZADOS
+   =========================================== */
+
+.hover-lift {
+  transition: transform 0.3s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(251, 146, 60, 0.6);
+}
+
+/* ===========================================
+   UTILIDADES PARA BACKDROP BLUR
+   =========================================== */
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+}
+
+.backdrop-blur-lg {
+  backdrop-filter: blur(16px);
+}
+
+/* ===========================================
+   ESTILOS PARA FOCUS ACCESSIBILITY
+   =========================================== */
+
+*:focus-visible {
+  outline: 2px solid #fbbf24;
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #fbbf24;
+  outline-offset: 2px;
+}
+
+/* ===========================================
+   GRADIENTES PERSONALIZADOS
+   =========================================== */
+
+.gradient-altar {
+  background: linear-gradient(135deg, #7c2d12 0%, #c2410c 50%, #fbbf24 100%);
+}
+
+.gradient-candle {
+  background: linear-gradient(180deg, #fbbf24 0%, #f97316 100%);
+}
+
+.gradient-night {
+  background: linear-gradient(135deg, #000000 0%, #1e1b4b 50%, #4c1d95 100%);
+}
+
+/* ===========================================
+   UTILIDADES RESPONSIVE
+   =========================================== */
+
+@media (max-width: 640px) {
+  .mobile-text-sm {
+    font-size: 0.875rem;
+  }
+  
+  .mobile-p-4 {
+    padding: 1rem;
+  }
+}
+
+/* ===========================================
+   EFECTOS ESPECIALES PARA MODO VELA
+   =========================================== */
+
+.candle-light {
+  box-shadow: 
+    0 0 20px rgba(251, 191, 36, 0.4),
+    0 0 40px rgba(251, 146, 60, 0.3),
+    0 0 60px rgba(249, 115, 22, 0.2);
+}
+
+.dark-overlay {
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+/* ===========================================
+   ANIMACIONES ESPECÍFICAS PARA ELEMENTOS
+   =========================================== */
+
+/* Animación para papel picado */
+.papel-picado {
+  animation: float 3s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Animación para flores de cempasúchil */
+.cempasuchil {
+  animation: rotate 20s linear infinite, float 5s ease-in-out infinite;
+}
+
+/* Efecto de humo para velas */
+@keyframes smoke {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-50px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.smoke-effect {
+  animation: smoke 3s ease-out infinite;
+}
+
+/* ===========================================
+   UTILIDADES PARA ACCESIBILIDAD
+   =========================================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ===========================================
+   PRINT STYLES
+   =========================================== */
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-full-width {
+    width: 100% !important;
+  }
+}
+
+/* ===========================================
+   DARK MODE SUPPORT
+   =========================================== */
+
+@media (prefers-color-scheme: dark) {
+  /* Estilos ya optimizados para modo oscuro */
+}
+
+/* ===========================================
+   REDUCED MOTION SUPPORT
+   =========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
